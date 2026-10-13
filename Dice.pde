@@ -1,20 +1,18 @@
-Die[] dice = new Die[30];
+Die[] dice = new Die[25];
 void setup()
 {
-  noLoop();
-  size(420,420);
+  size(300, 350);
   int count = 0;
-  for (int outer = 1; outer <5; outer++)
-  {
-    for(int inner = 1; inner <7; inner++){
-   dice[count] = new Die(outer *60 -50, inner * 60 - 50); 
-   count++;
-    }
+  for (int outer = 1; outer < 6; outer++){
+    for (int inner = 1; inner < 6; inner++){
+      dice[count] = new Die(outer * 60 - 50, inner * 60 - 50);
+      count++;}
   }
+  noLoop();
 }
 void draw()
 {
-  background(0);
+  background(255, 182, 193);
   int total = 0;
     for (int i = 0; i < dice.length; i++)
   {
@@ -22,7 +20,9 @@ void draw()
     dice[i].show();
     total = total + dice[i].roll;
   }
-  System.out.println("Total: " + total);
+  fill(255);
+  textSize(20);
+  text("Total:" + total,120,325);
   
 }
 void mousePressed()
@@ -46,9 +46,9 @@ class Die //models one single dice cube
   }
   void show()
   {
-    fill(255,255,255);
+    fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
     rect(myX,myY,40,40);
-    fill(0,0,0);
+    fill(255,255,255);
     if (roll == 1){
       ellipse(myX + 20, myY + 20,5,5);}
     if (roll ==2){
