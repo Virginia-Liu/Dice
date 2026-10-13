@@ -5,7 +5,7 @@ void setup()
   int count = 0;
   for (int outer = 1; outer < 6; outer++){
     for (int inner = 1; inner < 6; inner++){
-      dice[count] = new Die(outer * 60 - 50, inner * 60 - 50);
+      dice[count] = new Die(outer * 50 - 40, inner * 50 - 40);
       count++;}
   }
   noLoop();
