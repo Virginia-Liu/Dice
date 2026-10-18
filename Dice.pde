@@ -1,11 +1,11 @@
 Die[] dice = new Die[25];
 void setup()
 {
-  size(300, 350);
+  size(350, 350);
   int count = 0;
-  for (int outer = 1; outer < 6; outer++){
-    for (int inner = 1; inner < 6; inner++){
-      dice[count] = new Die(outer * 60 - 50, inner * 60 - 50);
+  for (int outer = 0; outer < 5; outer++){
+    for (int inner = 0; inner < 5; inner++){
+      dice[count] = new Die(outer * 60 +25, inner * 60 +25);
       count++;}
   }
   noLoop();
